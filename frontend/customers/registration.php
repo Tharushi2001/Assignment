@@ -8,11 +8,12 @@ $result = $conn->query($sql);
 ?>
 
 
-    <div>
+    <div class="banner-img">
+  
         <form action="../../backend/customcontroller/submit_registration.php" method="post">
-            <div class="container">
+            <div class="container ">
                 
-                <h2 class="mt-3 text-center">Customer Registration</h2>
+                <h2 class="mt-3 text-center text-white">Customer Registration</h2>
 <div class="outer-box">
                 <label for="title"><b>Title</b></label>
                 <select name="title" class="form-input" required>
@@ -52,77 +53,17 @@ $result = $conn->query($sql);
                     ?>
                 </select>
 
-                <input type="submit" value="Register" class="form-submit">
+           
+           <div class="form-buttons d-flex justify-content-between gap-2">
+  <input type="submit" value="Register" class="form-submit btn-sm">
+  <a href="viewcustomers.php" class="btn btn-secondary btn-sm w-50">View</a>
+</div>
                 </div>
             </div>
         </form>
     </div>
-
-<style>
-
+                </div>
 
 
 
-  .form-title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-  }
 
-  .form-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #555;
-  }
-
-  .form-input,
-  .form-select {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1.5px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 15px;
-    transition: border-color 0.3s;
-  }
-
-  .form-input:focus,
-  .form-select:focus {
-    border-color: #007BFF;
-    outline: none;
-  }
-
-  .form-submit {
-    width: 100%;
-    background-color: #007BFF;
-    border: none;
-    padding: 12px 0;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .form-submit:hover {
-    background-color: #0056b3;
-  }
-
-  /* Responsive */
-  @media (min-width: 600px) {
- 
-      .outer-box {
-    max-width: 600px;
-    background-color: #fff;
-    margin: 28px auto;
-    padding: 50px 100px;
-    box-shadow: 0 0 15px rgba(27, 26, 26, 0.1);
-    border-radius: 8px;
-  } 
-  }
-</style>
-
-</style>

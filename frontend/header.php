@@ -10,6 +10,7 @@
         rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
         crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -26,8 +27,13 @@
             <a class="nav-link" href="/Assignment/frontend/customers/registration.php">Customer Registration</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Assignment/frontend/items/registration.php">Item Registration</a>
+  <a class="nav-link" href="/Assignment/frontend/customers/viewcustomers.php">View Customers</a>
+</li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/Assignment/frontend/items/itemform.php">Item Registration</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/Assignment/frontend/reports/invoice_report.php">Reports</a>
           </li>
