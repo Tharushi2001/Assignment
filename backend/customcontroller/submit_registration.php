@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match('/^[0-9]{10}$/', $contact)) {
         die("Invalid phone number.");
     }
-
+    
     $stmt = $conn->prepare("INSERT INTO customer (title, first_name, middle_name, last_name, contact_no, district) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssi", $title, $first, $middle, $last, $contact, $district_id);
 
