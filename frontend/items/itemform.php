@@ -16,9 +16,9 @@ $subcat_result = $conn->query($subcat_query);
     <div class="container">
       <h2 class="mt-3 text-center text-white">Items Registration</h2>
       <div class="outer-box">
-
-        <label for="itemcode"><b>Item Code</b></label>
-        <input type="text" name="itemcode" class="form-input" required>
+        <!-- Item Registration Form -->
+        <label for="itemcode"><b>Item Code</b></label> 
+        <input type="text" name="itemcode" class="form-input" required>   
 
         <label for="itemname"><b>Item Name</b></label>
         <input type="text" name="itemname" class="form-input" required>

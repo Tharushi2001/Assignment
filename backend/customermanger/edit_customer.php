@@ -14,6 +14,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 $customer = $result->fetch_assoc();
 
+// Handle form submission (update customer)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $first_name = $_POST['first_name'];
@@ -22,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact_no = $_POST['contact_no'];
     $district = $_POST['district'];
 
+    
+    // Prepare and execute update query
     $update = $conn->prepare("UPDATE customer SET title=?, first_name=?, middle_name=?, last_name=?, contact_no=?, district=? WHERE id=?");
     $update->bind_param("ssssssi", $title, $first_name, $middle_name, $last_name, $contact_no, $district, $id);
     $update->execute();
@@ -36,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8" />
   <title>Edit Customer</title>
-  <!-- Bootstrap CSS CDN -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-
+<!-- Form container -->
 <div class="edit-wrapper mt-5 bg-blue " >
   <h2 class="mb-4 text-center">Edit Customer</h2>
   <form method="POST" class="mx-auto" style="max-width: 600px;">

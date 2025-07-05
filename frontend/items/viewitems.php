@@ -13,6 +13,7 @@ $sql = "SELECT i.id, i.item_code, i.item_name, i.quantity, i.unit_price,
 $result = $conn->query($sql);
 ?>
 
+   <!-- Check if any items were returned from the database -->
 <div class="container mt-5">
     <h2 class="text-center mb-4">Registered Items</h2>
 
@@ -31,7 +32,7 @@ $result = $conn->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>    <!-- Loop through each item and display its data -->
                     <tr>
                         <td><?= htmlspecialchars($row['id']) ?></td>
                         <td><?= htmlspecialchars($row['item_code']) ?></td>
@@ -41,11 +42,11 @@ $result = $conn->query($sql);
                         <td><?= htmlspecialchars($row['quantity']) ?></td>
                         <td><?= number_format($row['unit_price'], 2) ?></td>
                          <td>
-                               <a href="/Assignment/backend/itemmanger/edit_item.php?id=<?= $row['id'] ?>" class="btn-sm btn-primary me-1" title="Edit">
+                               <a href="/Assignment/backend/itemmanger/edit_item.php?id=<?= $row['id'] ?>" class="btn-sm btn-primary me-1" title="Edit">    <!-- Edit button -->
                     <i class="fas fa-edit"></i>
                 </a>
-                       <a href="/Assignment/backend/itemmanger/delete_item.php?id=<?= $row['id'] ?>" class="btn-sm btn-danger" title="Delete"
-                   onclick="return confirm('Are you sure you want to delete this customer?');">
+                       <a href="/Assignment/backend/itemmanger/delete_item.php?id=<?= $row['id'] ?>" class="btn-sm btn-danger" title="Delete"      
+                   onclick="return confirm('Are you sure you want to delete this customer?');">  <!-- Delete button-->
                     <i class="fas fa-trash-alt"></i>
                 </a>
                         </td>

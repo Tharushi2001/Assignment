@@ -30,7 +30,10 @@ $condition
 ORDER BY inv.date ASC, inv.invoice_no
 ";
 
-$result = $conn->query($sql);
+
+// Execute the query
+$result = $conn->query($sql); 
+
 ?>
 
 <div class="container mt-5">
@@ -54,7 +57,7 @@ $result = $conn->query($sql);
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
-                    <th>Invoice No</th>
+                    <th>Invoice No</th>     <!-- Column Names -->
                     <th>Date</th>
                     <th>Customer</th>
                     <th>Item Code</th>
@@ -64,7 +67,7 @@ $result = $conn->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>    <!-- Loop through each record and display it -->
                     <tr>
                         <td><?= htmlspecialchars($row['invoice_no']) ?></td>
                         <td><?= htmlspecialchars($row['date']) ?></td>

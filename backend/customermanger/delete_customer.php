@@ -1,6 +1,7 @@
 <?php
 require_once "../../backend/config/database.php";
 
+// Get the customer ID from the URL query parameter 
 $id = $_GET['id'] ?? null;
 
 if ($id) {
@@ -9,5 +10,6 @@ if ($id) {
     $stmt->execute();
 }
 
+// Redirect to the customer view page after deletion
 header("Location: ../../frontend/customers/viewcustomers.php");
 exit;

@@ -2,6 +2,8 @@
 require_once "../../backend/config/database.php";
 require_once "../header.php";
 
+
+// SQL query to retrieve item summary along with category and subcategory names
 $sql = "
 SELECT 
     i.item_name,
@@ -31,7 +33,8 @@ $result = $conn->query($sql);
                     <th>Available Quantity</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> 
+                <!-- Loop through each item and display its data -->
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?= htmlspecialchars($row['item_name']) ?></td>

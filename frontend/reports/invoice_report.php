@@ -48,7 +48,7 @@ $result = $conn->query($sql);
     </form>
 
     <?php if ($result && $result->num_rows > 0): ?>
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped">    <!-- Display the invoice records in a table -->
             <thead class="table-dark">
                 <tr>
                     <th>Invoice No</th>
@@ -60,7 +60,7 @@ $result = $conn->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>      <!-- Loop through each record and display its data -->
                     <tr>
                         <td><?= htmlspecialchars($row['invoice_no']) ?></td>
                         <td><?= htmlspecialchars($row['date']) ?></td>
