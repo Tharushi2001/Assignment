@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $update->bind_param("ssiidii", $item_code, $item_name, $item_category, $item_subcategory, $quantity, $unit_price, $id);
     $update->execute();
 
-    header("Location: /Assignment/backend/itemmanger/view_items.php");
+    header("Location: /Assignment/frontend/items/viewitems.php");
     exit;
 }
 
@@ -47,10 +47,10 @@ $subcat_result = $conn->query("SELECT id, sub_category FROM item_subcategory");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container mt-5">
+<div class="edit-wrapper">
     
-    <h2 class="text-white">Edit Item</h2>
-    <div class="edit-wrapper">
+    <h2 class="text-center">Edit Item</h2>
+   
     <form method="POST" style="max-width:600px;">
         <div class="mb-3">
             <label for="item_code" class="form-label">Item Code</label>
@@ -100,7 +100,7 @@ $subcat_result = $conn->query("SELECT id, sub_category FROM item_subcategory");
         <a href="/Assignment/frontend/items/viewitems.php" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
-</div>
+
 
 
 </body>
@@ -119,10 +119,12 @@ $subcat_result = $conn->query("SELECT id, sub_category FROM item_subcategory");
   .edit-wrapper {
     background-color: #ffffff;
     padding: 30px;
-    width: 100%;
+    width:600px;
+
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    
   }
 
   .form-buttons a {

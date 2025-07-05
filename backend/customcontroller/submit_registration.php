@@ -38,7 +38,7 @@ if ($checkResult->num_rows > 0) {
 if ($stmt->execute()) {
 echo "<script>
         alert('Customer registered successfully!');
-        window.location.href = 'registration.php'; 
+          window.location.href = '../../frontend/customers/registration.php'; 
       </script>";
 
 } else {

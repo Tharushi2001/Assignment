@@ -19,12 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("INSERT INTO item (item_code, item_category, item_subcategory, item_name, quantity, unit_price) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("siisid", $item_code, $item_category, $item_subcategory, $item_name, $quantity, $unit_price);
 
-    if ($stmt->execute()) {
-        echo "Item registered successfully!";
-      
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+if ($stmt->execute()) {
+    echo "<script>
+        alert('Item submitted successfully!');
+        window.location.href = '../../frontend/items/viewitems.php';
+    </script>";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
 
     $stmt->close();
     $conn->close();

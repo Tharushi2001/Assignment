@@ -18,6 +18,10 @@
   align-items: center;
   justify-content: center;
 }
+.icon-img{
+  width: 200px;
+  height: 180px;
+}
 
   .form-label {
     display: block;
