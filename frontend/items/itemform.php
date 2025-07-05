@@ -48,7 +48,7 @@ $subcat_result = $conn->query($subcat_query);
         
            
            <div class="form-buttons d-flex justify-content-between gap-2">
-  <input type="submit" value="Register" class="form-submit btn-sm">
+  <input type="submit" value="Register" class="btn form-submit btn-sm">
   <a href="viewitems.php" class="btn btn-secondary btn-sm w-50">View</a>
 </div>
 

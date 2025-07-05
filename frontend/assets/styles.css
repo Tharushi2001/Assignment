@@ -77,12 +77,36 @@
   text-decoration: none;
   color: white;
   width: 50%;
+  border-radius: 40px;
 }
 
 .btn-secondary {
   background-color: #0de4ae;
 }
+.bg-blue{
+  background-color: #0E2148;;
+}
+.nav-link{
+  color: white !important;
+  font-size: 500 !important;
+}
+.dropdown-menu {
+background-color: #0E2148 !important;
 
+}
+.dropdown-item{
+color: white !important;
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  text-decoration: underline !important;
+  background-color: #9ec1e4 !important; 
+  color: #000 !important; 
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  --bs-table-striped-bg: #e6f2ff !important; 
+  --bs-table-striped-color: #000 !important;  
+}
 
 
 

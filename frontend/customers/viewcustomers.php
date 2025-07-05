@@ -25,6 +25,7 @@ $result = $conn->query($sql);
                     <th>Last Name</th>
                     <th>Contact No</th>
                     <th>District</th>
+                    <th>Manage</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,15 @@ $result = $conn->query($sql);
                         <td><?= htmlspecialchars($row['last_name']) ?></td>
                         <td><?= htmlspecialchars($row['contact_no']) ?></td>
                         <td><?= htmlspecialchars($row['district']) ?></td>
+                        <td>
+                               <a href="/Assignment/backend/customermanger/edit_customer.php?id=<?= $row['id'] ?>" class="btn-sm btn-primary me-1" title="Edit">
+                    <i class="fas fa-edit"></i>
+                </a>
+                       <a href="/Assignment/backend/customermanger/delete_customer.php?id=<?= $row['id'] ?>" class="btn-sm btn-danger" title="Delete"
+                   onclick="return confirm('Are you sure you want to delete this customer?');">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

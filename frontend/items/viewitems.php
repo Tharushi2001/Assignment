@@ -27,6 +27,7 @@ $result = $conn->query($sql);
                     <th>Sub Category</th>
                     <th>Quantity</th>
                     <th>Unit Price</th>
+                    <th>Manage</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,15 @@ $result = $conn->query($sql);
                         <td><?= htmlspecialchars($row['sub_category']) ?></td>
                         <td><?= htmlspecialchars($row['quantity']) ?></td>
                         <td><?= number_format($row['unit_price'], 2) ?></td>
+                         <td>
+                               <a href="/Assignment/backend/itemmanger/edit_item.php?id=<?= $row['id'] ?>" class="btn-sm btn-primary me-1" title="Edit">
+                    <i class="fas fa-edit"></i>
+                </a>
+                       <a href="/Assignment/backend/itemmanger/delete_item.php?id=<?= $row['id'] ?>" class="btn-sm btn-danger" title="Delete"
+                   onclick="return confirm('Are you sure you want to delete this customer?');">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
